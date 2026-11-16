@@ -49,8 +49,8 @@ a.bubble:hover, a.bubble:focus-visible { background: var(--ink-deep); border-col
 @keyframes drift { from { translate: 0 -5px; } to { translate: 0 5px; } }
 .about { flex: 1 1 220px; max-width: 280px; display: flex; flex-direction: column; gap: 18px; }
 .about h1 { font-size: 30px; line-height: 1.1; }
-.portrait { width: 100%; max-width: 250px; aspect-ratio: 4 / 5; background: var(--ink); overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
-.portrait img { width: 112%; max-width: none; height: auto; display: block; }
+.portrait { width: 100%; max-width: 240px; transform: rotate(-1.5deg); }
+.portrait img { width: 100%; height: auto; display: block; }
 
 /* ---------- Work pages ---------- */
 .all { display: flex; flex-wrap: wrap; gap: 32px; }
@@ -96,7 +96,7 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
   .wrap { padding: 12px 20px 64px; }
   .map { aspect-ratio: 600 / 800; }
   .about, .all .about { max-width: none; }
-  .portrait { max-width: 220px; }
+  .portrait { max-width: 220px; margin: 0 auto; }
   .heads { display: none; }
   .trio { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .trio .blank { display: none; }
@@ -128,7 +128,7 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
       <div class="map" id="map"><svg id="lines" aria-hidden="true" preserveAspectRatio="none"></svg></div>
     </div>
     <aside class="about">
-      <div class="portrait"><img src="portrait.webp" width="787" height="800" alt="Isaaq Tomkins"></div>
+      <div class="portrait"><img src="portrait.webp" width="754" height="833" alt="Isaaq Tomkins"></div>
       <h1>Isaaq Tomkins...</h1>
       <p>...is a journalist based in London. He is a staff writer at TLDR News, covering companies, markets, and AI.</p>
       <p>Before that, he was a Scott Trust Fellow at the Guardian, covering national news, environment and investigations.</p>
