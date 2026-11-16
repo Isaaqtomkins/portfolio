@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaaq Tomkins, journalist</title>
+<meta name="description" content="Isaaq Tomkins is a journalist based in London. Staff writer at TLDR News and former Scott Trust Fellow at the Guardian.">
+<meta property="og:title" content="Isaaq Tomkins, journalist">
+<meta property="og:description" content="Written, video and audio journalism: TLDR News and the Guardian.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root { --ground: #FBFBF0; --ink: #1D3BD1; --ink-deep: #0B1F8A; --tint: #D9DCF3; }
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body { margin: 0; color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: 19px; line-height: 1.25; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); }
+a:hover { color: var(--ink-deep); }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+p, h1, h2, h3 { margin: 0; font-weight: 400; }
+[hidden] { display: none !important; }
+.caps { font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* The whole site sits in one centred column so nothing grows without limit. */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 20px 32px 80px; }
+
+/* ---------- Header, on every page ---------- */
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 32px; border-bottom: 1px solid var(--ink); padding-bottom: 8px; margin-bottom: 32px; }
+.top .name { font-size: 26px; text-decoration: none; line-height: 1.1; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 28px; margin-left: auto; }
+.top nav a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.top nav a:hover, .top nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Landing ---------- */
+.home { display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; }
+.stage { flex: 999 1 520px; min-width: 0; }
+.hint { margin-bottom: 12px; font-size: 18px; font-style: italic; }
+.map { position: relative; width: 100%; aspect-ratio: 730 / 540; container-type: inline-size; }
+.map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.map path { fill: none; stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.bubble { position: absolute; transform: translate(-50%, -50%); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; text-decoration: none; line-height: 1.05; border: 1.5px solid var(--ink); background: var(--ground); color: var(--ink); animation: drift 7s ease-in-out infinite alternate; transition: background 0.2s ease, color 0.2s ease, scale 0.2s ease; cursor: grab; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
+.bubble.hub { background: var(--ink); color: var(--ground); }
+a.bubble:hover, a.bubble:focus-visible { background: var(--ink-deep); border-color: var(--ink-deep); color: var(--ground); scale: 1.06; }
+.bubble.dragging { cursor: grabbing; animation-play-state: paused; scale: 1.04; }
+.bubble span { max-width: 76%; }
+.bubble small { font-size: 0.55em; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.35em; max-width: 80%; }
+@keyframes drift { from { translate: 0 -5px; } to { translate: 0 5px; } }
+.about { flex: 1 1 220px; max-width: 280px; display: flex; flex-direction: column; gap: 18px; }
+.about h1 { font-size: 30px; line-height: 1.1; }
+.portrait { width: 62%; max-width: 190px; height: auto; display: block; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent); margin-bottom: -6px; }
+
+/* ---------- Work pages ---------- */
+.all { display: flex; flex-wrap: wrap; gap: 32px; }
+.all .about { max-width: 210px; align-self: flex-start; font-size: 17px; }
+.cols { flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.heads, .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.heads { border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+#rows { display: flex; flex-direction: column; gap: 32px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px 24px; }
+.page-title { font-size: 34px; margin-bottom: 28px; }
+.prose { max-width: 620px; display: flex; flex-direction: column; gap: 16px; font-size: 20px; line-height: 1.35; }
+.prose h3 { font-size: 26px; margin-top: 12px; }
+#view-read .page-title { margin: 8px 0 8px; max-width: 760px; font-size: 40px; line-height: 1.05; }
+.read-sub { font-size: 24px; font-style: italic; margin-bottom: 28px; max-width: 760px; }
+#view-read .prose { margin-top: 24px; }
+.back { margin-top: 40px; }
+.back a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.back a:hover { text-decoration: underline; }
+.thumb.tall { background: #000; justify-content: center; align-items: stretch; }
+.thumb.tall img { object-fit: contain; }
+a.card.text:hover .title { text-decoration: underline; text-underline-offset: 3px; }
+.links { display: flex; flex-direction: column; font-size: 24px; }
+.links a { min-height: 48px; display: inline-flex; align-items: center; align-self: flex-start; }
+
+.card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; min-width: 0; }
+.kind { display: none; }
+.thumb { aspect-ratio: 16 / 9; background: var(--tint); overflow: hidden; display: flex; align-items: flex-end; }
+.thumb .label { padding: 12px; font-size: 14px; }
+.card.yt .thumb { background: var(--ink); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.card:hover .thumb img { transform: scale(1.03); }
+.title { font-size: 18px; line-height: 1.2; }
+a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
+.tag { display: block; font-size: 14px; margin-top: 4px; }
+.card.text { border-top: 1px solid var(--ink); padding-top: 14px; gap: 8px; }
+.card.text .title { font-size: 24px; line-height: 1.1; }
+.card.text .sub { font-style: italic; }
+.card.text .excerpt { font-size: 17px; line-height: 1.3; }
+.status { border-top: 1px solid var(--ink); padding-top: 16px; text-align: center; }
+
+@media (min-width: 900px) { .all .about { position: sticky; top: 28px; } }
+@media (max-width: 760px) {
+  .wrap { padding: 12px 20px 64px; }
+  .map { aspect-ratio: 600 / 800; }
+  .about, .all .about { max-width: none; }
+  .portrait { width: 44%; }
+  .heads { display: none; }
+  .trio { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .trio .blank { display: none; }
+  .kind { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubble { animation: none; transition: none; }
+  .thumb img { transition: none; }
+  .card:hover .thumb img { transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="name" id="top-name" href="#">Isaaq Tomkins</a>
+    <nav class="caps" aria-label="Site">
+      <a href="#" data-nav="home">Map</a>
+      <a href="#all" data-nav="all">All work</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Landing -->
+  <section id="view-home" class="home">
+    <div class="stage">
+      <p class="hint">Click the bubbles to explore my portfolio</p>
+      <div class="map" id="map"><svg id="lines" aria-hidden="true" preserveAspectRatio="none"></svg></div>
+    </div>
+    <aside class="about">
+      <img class="portrait" src="portrait.webp" width="470" height="900" alt="Isaaq Tomkins">
+      <h1>Isaaq Tomkins...</h1>
+      <p>...is a journalist based in London. He is a staff writer at TLDR News, covering companies, markets, and AI.</p>
+      <p>Before that, he was a Scott Trust Fellow at the Guardian, covering national news, environment and investigations.</p>
+    </aside>
+  </section>
+
+  <!-- All work: three aligned columns -->
+  <section id="view-all" class="all" hidden>
+    <aside class="about">
+      <p>Isaaq Tomkins is a journalist based in London. He is a staff writer at TLDR News, covering companies, markets, and AI.</p>
+      <p>Before that, he was a Scott Trust Fellow at the Guardian, covering national news, environment and investigations.</p>
+    </aside>
+    <div class="cols">
+      <div class="heads caps" aria-hidden="true"><span>Written</span><span>Video</span><span>Podcasts</span></div>
+      <div id="rows"></div>
+      <p class="status caps" id="status" role="status">Loading</p>
+    </div>
+  </section>
+
+  <!-- One category -->
+  <section id="view-cat" hidden>
+    <h2 class="page-title" id="cat-title"></h2>
+    <div class="grid" id="cat-grid"></div>
+    <div class="prose" id="cat-prose" hidden></div>
+  </section>
+
+  <!-- One magazine piece -->
+  <article id="view-read" hidden>
+    <p class="caps" id="read-tag"></p>
+    <h2 class="page-title" id="read-title"></h2>
+    <p class="read-sub" id="read-sub"></p>
+    <div class="prose" id="read-body"></div>
+    <p class="caps back"><a href="#tldr-magazine">Back to magazine</a></p>
+  </article>
+
+  <!-- Contact -->
+  <section id="view-contact" hidden>
+    <h2 class="page-title">Contact</h2>
+    <div class="links">
+      <a href="mailto:isaaq@tldrnews.co.uk">isaaq@tldrnews.co.uk</a>
+      <a href="https://www.linkedin.com/in/isaaq-tomkins-542505184/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/isaaqreports/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <noscript><p>This site lists work using JavaScript. See the <a href="https://www.theguardian.com/profile/isaaq-tomkins">Guardian profile</a> and <a href="https://www.youtube.com/@TLDRbusiness">TLDR Business</a>.</p></noscript>
+</div>
+
+<script>
+// ===========================================================================
+// CONTENT. Edit these lists to add, remove or reorder work.
+// Guardian item:  { t: headline, s: section, u: path after theguardian.com/, i: image parts }
+//   image parts:  [media hash, crop, file width, signature, overlay]  overlay "d" default, "a" 2025 badge
+// YouTube item:   { id: video id, t: title, c: channel or show name }
+// Plain link:     { href: address, t: title, tag: caption, label: words shown in place of an image }
+// Magazine entry:  { slug, t: title, sub: subheading, x: excerpt, tag: caption }  (opens the full text in ARTICLE_HTML)
+// ===========================================================================
+var WRITTEN = [
+  { t: 'Fitness influencers linked to wellness brand helping run illegal steroid market on Telegram', s: 'Society', u: 'society/ng-interactive/2026/jul/12/fitness-influencers-linked-to-wellness-brand-helping-run-steroid-market-on-telegram', i: ['3082c93c5a013b4badfc64fef0994770a8af8b47', '0_0_5000_4000', '5000', 'fb3a2a627a7f3fc70cb0b79b8f0ebeb2', 'd'] },
+  { t: 'Bill Gates charity trust’s holdings in fossil fuel firms rise despite divestment claims', s: 'Environment', u: 'environment/2026/jan/19/bill-gates-charity-trusts-holdings-in-fossil-fuel-firms-rise-despite-divestment-claims', i: ['9198cf376fd5a4cf8ddaa138d5b9a7970d690962', '539_0_4461_3569', '4461', 'b1e04458c7d03e32f8366c5a882b847f', 'd'] },
+  { t: '‘Financial pandemic’: £1 in every £11 spent on UK public contractors goes to private equity', s: 'Society', u: 'society/2026/jun/28/1-in-every-11-spent-uk-public-contractors-private-equity', i: ['5a8151730246b78fedf6367077b3b78907e2307d', '1_0_4998_4000', '4998', '025b876abf987612951440c60694b3a0', 'd'] },
+  { t: 'AI allows hackers to identify anonymous social media accounts, study finds', s: 'Technology', u: 'technology/2026/mar/08/ai-hackers-social-media-accounts-study', i: ['b1a007e1f120b2e617b398768efbf0c4d98301a8', '267_0_1350_1080', '1350', '09a4856c1a7955ca8969842fe706cd45', 'd'] },
+  { t: '‘You can’t control everything’: the rise in plastic surgeons asked to create ‘AI face’', s: 'Technology', u: 'technology/2026/may/23/rise-in-plastic-surgeons-asked-to-create-ai-face-cosmetic-surgery', i: ['c19b2db029da17f6d488e83d5d929e1311fa37e5', '568_41_8882_7102', '8882', 'a9267f2f9459bd6a731687f1887ef1c8', 'd'] },
+  { t: '‘Something I’ve never felt since Covid. It was scarier’: the shock and pain of Kent’s meningitis outbreak', s: 'UK news', u: 'uk-news/ng-interactive/2026/mar/21/how-meningitis-broke-out-kent-university-nightclub', i: ['83512266a756f6e591d320238a5c4f9f9670cda2', '0_901_4000_3198', '4000', 'fa4a845e38006d36a7baac8f8df114e6', 'd'] },
+  { t: 'UK becoming ‘wild west’ for experimental peptides, expert warns', s: 'Society', u: 'society/2026/jul/12/uk-wild-west-for-experimental-peptides-expert', i: ['9d33b020347000ef159ce7e9e8b349a0450a0fdf', '0_0_2000_1600', '2000', '04908a8c7c44af01c2650ebf09a0ce43', 'd'] },
+  { t: '‘I love rats but we can’t live with them’: the headache of rising rodent populations around the world', s: 'Environment', u: 'environment/2026/aug/25/rats-numbers-rise-global-heating-poison-cities', i: ['fe4ea8a042c72697b57bce1ec3114ac33ab30cbf', '456_0_4560_3648', '4560', '1814883a646c4281453be27862d539a6', 'd'] },
+  { t: 'Landlords evicting tenants before law to prevent practice comes into force in England', s: 'Society', u: 'society/2026/apr/08/landlords-no-fault-evictions-tenants-renters-rights-bill-law', i: ['109e7f562a26eb80228b1bf07984aa3f5187ccc0', '183_0_4254_3405', '4254', 'b6320933dda2a3acc48c6bf5fc86e3c3', 'd'] },
+  { t: 'An economic draft? Drive to get young Neets in the military divides opinion', s: 'Society', u: 'society/2026/jun/05/economic-draft-young-neets-military-divides-opinion', i: ['5e8e2a2ecf794f549b0d4e9b272a2ce3e6a62a54', '408_0_4508_3606', '4508', 'd70e0cf44c79b2a87a7a1a8d2488a50f', 'd'] },
+  { t: 'How England’s largest forest went from commodity to conservation haven', s: 'UK news', u: 'uk-news/2026/jun/02/kielder-england-largest-forest-commodity-conservation', i: ['1dd0423e0caa1ea7bf32c422a84bcc087e99578d', '382_0_2673_2139', '2673', '38e9624f26a9eb72deef7083d82b29bf', 'd'] },
+  { t: '‘It’s soul-destroying’: takeover crisis leaves Morecambe FC on the brink', s: 'UK news', u: 'uk-news/2025/jul/16/morecambe-fc-football-club-takeover-crisis-fans-supporters', i: ['c58ceb144b9c740a0c0fc9eda2b0bcec2cae600f', '688_0_7200_5760', '7200', 'f41dce5cfce13ddb451a27c1f6b84b49', 'a'] },
+  { t: '‘They’re a private company, run for profit!’: fury in Kent at South East Water’s outages', s: 'Environment', u: 'environment/2026/may/28/anger-kent-south-east-water-outages', i: ['de1015230bfb5687ef25a86ae3924c77f8ae1848', '146_0_6830_5464', '6830', '73394c000e8410cfee68f6eb2d570f49', 'd'] },
+  { t: 'South East Water chief executive to forgo his bonus over ‘unacceptable outages’', s: 'Business', u: 'business/2026/apr/14/south-east-water-chief-executive-to-forgo-his-bonus-over-unacceptable-outages', i: ['c43eebd748504bcf675fcbe05a7d7280eabb9bd6', '434_0_2151_1722', '2151', '6cccc690ce318dfc2824a5312ef05aa5', 'd'] },
+  { t: 'Rolls-Royce to invest £300m in expansion of Goodwood factory', s: 'Business', u: 'business/2025/jan/08/rolls-royce-to-invest-300m-in-expansion-of-goodwood-factory', i: ['ed031380f4eea1a5e207d007b19b2b4cd0c1d500', '0_14_4542_2726', '4542', '3f64d2a329a8dd0dd5ff46cf1e7b5a5a', 'a'] },
+  { t: 'Number of people seeking help with energy bills up by 20% last year', s: 'Money', u: 'money/2025/jan/10/people-seeking-help-energy-bills-citizens-advice-gas-electricity', i: ['cd395a7c1a0f37667e69fa3b3194d84624fbf3d4', '0_0_3500_2100', '3500', 'ce8dd01efaafdb24c83bbd1370a1f521', 'a'] },
+  { t: 'Streaming platform Twitch lets users enter viral ‘mogging’ beauty contests', s: 'Games', u: 'games/2026/may/10/mogging-gen-z-and-why-streaming-platform-twitch-hanged-rules-omoggle', i: ['b27415149c0bb162247a844efd7a4b8951aa4ad1', '71_0_5088_4070', '5088', '0020c807ef4d040a55ee1c95b0ec8f6e', 'd'] },
+  { t: 'UK Scientology buildings targeted for ‘speed runs’ as TikTok trend spreads', s: 'World news', u: 'world/2026/may/07/uk-scientology-buildings-speed-runs-tiktok-trend', i: ['728ce4e1c6a84907bc88307965478af075961f59', '904_680_2471_1978', '2471', '22f7441c39c127a8d02a8586e2e89c00', 'd'] },
+  { t: '‘It was surreal’: holidaymakers on first flight out of Abu Dhabi describe petrifying experience', s: 'World news', u: 'world/2026/mar/02/holidaymakers-first-flight-out-of-abu-dhabi-describe-petrifying-experience', i: ['52061e7fe991c3c55929dbd9b6efa554b3a254f9', '357_0_5355_4284', '5355', '9592176bd1604cea206164e46459cc14', 'd'] },
+  { t: 'Champion swimmer with rare brain cancer urges UK to do more to help people with condition', s: 'Society', u: 'society/2026/jun/16/champion-swimmer-archie-goodburn-rare-brain-cancer-uk-more-help', i: ['62932f4f17abee9fbb4bc4654751f8692f87450f', '1867_951_6720_5374', '6720', 'dcd055251e04c41611bacb2417622bc3', 'd'] },
+  { t: '‘It’s madness’: bat enthusiasts fear planning bill will derail years of conservation', s: 'Environment', u: 'environment/2025/oct/20/its-madness-bat-enthusiasts-fear-planning-bill-will-derail-years-of-conservation', i: ['1013f07dc8368b89b6f21fbd0bdfd3187251e808', '432_0_4320_3456', '4320', '7cd7a726de10813bc4f30bd0b6ae09a0', 'a'] },
+  { t: 'Consumers urged to ‘completely avoid’ UK-caught cod as population plunges', s: 'Environment', u: 'environment/2026/apr/09/consumers-urged-to-completely-avoid-uk-caught-cod-as-population-plunges', i: ['1695f4961546f047cf78858281fa0f2a8bbef3ca', '1248_413_2816_2252', '2816', 'ddf2c2bc2dac8341064a0e83a5ff6e25', 'd'] },
+  { t: '‘I don’t like being stuck in an office’: the young people helping plant a ring of trees around London', s: 'Environment', u: 'environment/2026/jun/17/young-people-mission-to-plant-a-ring-of-trees-around-london', i: ['c74d5cf05226e0e5debc2e28bda2f77abeb47242', '61_0_5000_4000', '5000', '6cda640df836bb9b4340b70de9f22a45', 'd'] }
+];
+
+var VIDEOS = [
+  { id: 'n4HjQIl3Ihs', t: 'How AI is Draining Google’s Finances', c: 'TLDR Business' },
+  { id: 'e-bWY_FOBX0', t: 'Is Circular AI Financing Really as Bad as It Sounds?', c: 'TLDR News Global' },
+  { id: 'oOo-d0rd4bs', t: 'Anthropic’s IPO Prospectus Explained', c: 'TLDR Business' },
+  { id: 'OoPPTpWYHzE', t: 'Can AI “Afford” a Slowdown?', c: 'TLDR Business' },
+  { id: 'oO_oIL4g4aI', t: 'BlackBerry is back… and they’re not selling phones', c: 'TLDR Business' },
+  { id: 'YLXUIR7b8LA', t: 'How the BBC Turned the Tables on Trump in Court', c: 'TLDR News' },
+  { id: 'oILCbxejiTQ', t: 'From Challenger to Winner: The Rise of Revolut', c: 'TLDR Business' },
+  { id: 'pJwJL-W4qnE', t: 'Why Netflix has Halved in Value', c: 'TLDR Business' },
+  { id: 'CHFOJmkoFY8', t: 'Nike is in Trouble — What Went Wrong?', c: 'TLDR Business' },
+  { id: 'ePcBM_TM_v8', t: 'How Did Jane Street Get So Obscenely Rich?', c: 'TLDR Business' },
+  { id: 'U0C7AknfcOs', t: 'The Insane Economics of GTA VI', c: 'TLDR Business' },
+  { id: 'RKMNcuLWxhA', t: 'Why This Verdict Could Cost Man City More Than You Think', c: 'TLDR Business' },
+  { id: 'onU85Iim1yM', t: 'Why SpaceX Has Given up on Space', c: 'TLDR Business' },
+  { id: 'yu1x9Ax7BpU', t: 'Will Politics Pop the AI Bubble?', c: 'TLDR Business' },
+  { id: 'fUg3SzCkiLU', t: 'Can Europe Break the Starlink Monopoly?', c: 'TLDR Business' },
+  { id: 'JDHdj8tjTiM', t: 'Why OpenAI is in Serious Trouble', c: 'TLDR Business' },
+  { id: 'kpOcxjnojTg', t: 'How Skydance Devoured American Media', c: 'TLDR Business' },
+  { id: 'oKgc2VFUleg', t: 'Why the Nvidia Affair is Bigger than You Think', c: 'TLDR Business' },
+  { id: 'eZcjkGOJ1Vw', t: 'Is Anthropic Really worth $2 Trillion?', c: 'TLDR Business' },
+  { id: 'H8HOfYm88Io', t: 'How BuzzBallz Took Over the Drinks Business', c: 'TLDR Business' },
+  { id: 'CZ6kI9g0z4k', t: 'Has Apple Stagnated?', c: 'TLDR Business' },
+  { id: 'wcGDSsxvSI4', t: 'How Palantir Captured the UK', c: 'TLDR Business' },
+  { id: 'sxNcSYojfqE', t: 'Who’s Winning the Robotaxi Wars?', c: 'TLDR Business' }
+];
+
+// Podcasts on YouTube (titles to be finessed).
+var PODCASTS_YT = [
+  { id: 'Tx4_Qx-CktE', t: 'The Last Word – Episode 4', c: 'Podcast' },
+  { id: 'CP9TO2_7D-M', t: 'The Last Word – Episode 5', c: 'Podcast' },
+  { id: 'VXFvuTZqn58', t: 'The Last Move – Episode 28', c: 'Podcast' },
+  { id: 'SZXLMpnZiv4', t: 'The Last Move – Episode 31', c: 'Podcast' }
+];
+
+// Guardian podcast episodes (production credits).
+var PODCASTS_GUARDIAN = [
+  { t: 'The people betting on catastrophic world events – podcast', s: 'Today in Focus', u: 'news/audio/2026/feb/04/the-people-betting-on-catastrophic-world-events-podcast', i: ['9ff07cec2f7610a77a6c372a2ce075b297b15d2a', '683_0_6827_5464', '6827', 'f8ac6652c06818070513b3536ee763e8', 'd'] },
+  { t: 'Will Trump’s board of peace replace the UN? – podcast', s: 'Today in Focus', u: 'news/audio/2026/jan/22/will-trumps-board-of-peace-replace-the-un-podcast', i: ['f7c1a8c2defd7b0234d7a0e06565fd4428f7e3a2', '160_0_1599_1280', '1599', '0bf91f42e5f601a80a2c051372fee34a', 'd'] },
+  { t: 'Why Donald Trump really wants Greenland – podcast', s: 'Today in Focus', u: 'news/audio/2026/jan/20/why-donald-trump-really-wants-greenland-podcast', i: ['04f71bc98f70cbfd50868a07d372c4a6cad687fe', '315_0_6439_5151', '6439', '97f8a0a35f11df8d08ac0f5b696315c6', 'd'] },
+  { t: 'Is ICE out of control? – podcast', s: 'Today in Focus', u: 'news/audio/2026/jan/16/is-ice-out-of-control-podcast', i: ['af1b46f261fefd8e372aed965d599fff5e3ba346', '250_0_2500_2000', '2500', '688c1f1a580dcd1645e4a1b3c97dfc47', 'd'] },
+  { t: 'Is Marco Rubio playing Trump? – podcast', s: 'Today in Focus', u: 'news/audio/2026/jan/14/is-marco-rubio-playing-trump', i: ['830eae202d18966902ec13141ffc5d4682fac21a', '965_784_3052_2443', '3052', '632fb0d10fcd6288c7b595a63572c0e6', 'd'] },
+  { t: 'On the ground in Venezuela after Trump’s ‘operation’ – podcast', s: 'Today in Focus', u: 'news/audio/2026/jan/08/on-the-ground-in-venezuela-after-trumps-operation-podcast', i: ['6f8516da5e28f538917184a45318c2e2566c92a5', '889_505_3928_3143', '3928', '9dac0b5862e3d50cbb2941ac0003b656', 'd'] },
+  { t: '‘A declaration of war’: Israel’s strike on Iran – Today in Focus Extra', s: 'Today in Focus', u: 'world/audio/2025/jun/13/declaration-of-war-israel-strike-on-iran-today-in-focus-extra', i: ['e41548e3c80b14579eac001d21ffbbf2fcb6cc3b', '615_0_5000_4000', '5000', 'f76092e0e49883b4799d3a7881ed1800', 'a'] },
+  { t: 'Donald Trump v Los Angeles – podcast', s: 'Today in Focus', u: 'news/audio/2025/jun/13/donald-trump-v-los-angeles-podcast', i: ['8de8ecd6981ddc432c93107e0f4c6952a1c5c743', '467_0_2333_1866', '2333', 'c9b204ee6d49d1ab13a563027c0aa1ea', 'a'] },
+  { t: 'Trump deploys the national guard in LA – Today in Focus Extra', s: 'Today in Focus', u: 'news/audio/2025/jun/09/trump-sends-national-guard-la-today-in-focus-extra-podcast', i: ['8bee7715268f556b799bdae1d97c556a3487046d', '687_0_6880_5504', '6880', '54ee478a48c4451f6b4e5762a404712e', 'a'] }
+];
+
+
+// Cover image for the Instagram reel, stored inside this file.
+var REEL_COVER = 'data:image/jpeg;base64,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';
+
+var GUARDIAN_VIDEO = [
+  { t: 'Vape shops but no jobs: one young man’s search for work in Grimsby', s: 'Video', u: 'environment/video/2026/may/26/vape-shops-but-no-jobs-one-young-mans-search-for-work-in-grimsby', i: ['a7550272f8092588b5b017f073bb1e28f51ed02c', '0_0_1350_1080', '1350', '3bcc7d6e1bfb105ae457db138c692754', 'd'] },
+  { href: 'https://www.instagram.com/reels/DaZ8gstCNTR/', t: '‘You can’t control everything’: the rise in plastic surgeons asked to create ‘AI face’', tag: 'Instagram reel, the Guardian', img: REEL_COVER, tall: true }
+];
+
+// Too Long magazine. Titles and openings are taken from the drafts in Drive.
+var MAGAZINE = [
+  {"slug": "ai-social-bottleneck", "t": "AI’s social bottleneck", "sub": "Data centre protests could make AI speculators reconsider", "x": "For a reality check, the places to look are the towns, cities and states where AI infrastructure is actually being built.", "tag": "Too Long, issue 9"},
+  {"slug": "pump-fun-go", "t": "How Pump.fun GO financialised suffering", "sub": "", "x": "Back in June, in a corner of the internet popular with some, but off the radar of most, someone posted a bounty.", "tag": "Too Long, issue 9"},
+  {"slug": "company-towns", "t": "Your CEO, Priest, and Feudal Lord", "sub": "Starbase and the Modern Company Town", "x": "Even though company towns seem like a thing of the past, Elon Musk is on his way to building a second town in Louisiana.", "tag": "Too Long, issue 10"},
+  {"slug": "why-stocks-dont-matter", "t": "Why Stocks Don’t Matter", "sub": "Well, maybe a little ...", "x": "The stock market and the Premier League have a similar problem.", "tag": "Too Long, issue 10"},
+  {"slug": "china-ai-bet", "t": "China’s AI Bet: Win Everywhere but the Frontier", "sub": "", "x": "Right now, the picture of China’s AI uptake looks very different from America’s.", "tag": "Too Long, issue 10"},
+  {"slug": "hostile-by-design", "t": "Hostile by Design", "sub": "", "x": "History has taught us that technological breakthroughs lead to economic ones, which in turn lead to political ones.", "tag": "Too Long, issue 10"},
+  {"slug": "mother-naked", "t": "Mother Naked", "sub": "", "x": "It’s 1434 AD. A travelling bard bursts into a feast at Durham Cathedral, damp from a storm raging outside.", "tag": "Book review, Too Long, issue 10"}
+];
+
+// Full text of each magazine piece, keyed by slug.
+var ARTICLE_HTML = {
+  "ai-social-bottleneck": "<p>“We’re all agreed on what happens next, pretty much,” reads a recent <em>Financial Times<\/em> Alphaville blogpost, as analysts at Goldman raise “valuation concerns” with their clients, mainstream media speculates on when, not if, the AI bubble will burst, and infamous AI critic Ed Zitron’s blood pressure creeps higher and higher.<\/p><p>But, in the same week, semiconductor stocks had their best day on Wall Street in over a year, as investors doubled down on tech after promising earnings reports from Amazon and Microsoft.<\/p><p>Looking exclusively at the world of finance, the AI bubble is mystifying. No matter how much people shout about hyperscaler debt, artificial earnings, circular financing and so on, the big players never seem to run out of tether.<\/p><p>For a reality check, the places to look are the towns, cities and states where AI infrastructure is actually being built: New York, for example, became the first US state to halt large data centre construction this summer, as 17 other states weigh up restrictive legislation, and more than 183 localities in North America have already taken action.<\/p><p>The global expectation is that data centre growth will be led by the US. With midterm elections approaching, candidates across the political spectrum are scooping up public support with calls for a pause on data centre construction. In Memphis, Tennessee for example, progressive candidate Justin Pearson put a fight against xAI’s construction at the heart of his congressional campaign.<\/p><p>Companies like Elon Musk’s xAI “view these communities as sacrifice zones”, Pearson told <em>Mother Jones<\/em> in August, after winning his primary.<\/p><p>People are indeed pissed. A nationwide poll by NBC News earlier this year found that Americans view AI more negatively than Immigration and Customs Enforcement (ICE). That feeling of suspicion and fear is compounded when data centres are built on people’s doorsteps, threatening an increase to energy or water bills without clear benefits to the local economy.<\/p><p>And the pushback is not confined to the US. According to the Uptime Institute, about half of the 250 large data centre projects planned around the world (those exceeding 100MW of energy demand) will be completed on time, with local opposition a significant cause of delay or cancellation.<\/p><p>Delays to essential AI infrastructure pose a serious threat to tech companies. A recent report from the Carnegie Endowment found that construction delay of just one year reduces AI data centre value more than electricity costs doubling. Across the lifetime of a large US data centre, it amounts to about $500m lost in revenue, along with other serious knock-on effects, like slower model training, and the waste of GPUs with a limited lifespan. Big tech companies estimate current GPUs have about six years before they stop being useful, and even that number is seen by some as optimistic.<\/p><p>Data centre delays undermine the driving force behind AI development: companies’ ability to fulfil the extremely high projected demand that justifies their valuations.<\/p><p>Christopher Woods, head of equity strategy at investment bank Jefferies, has a term for what’s coming: “massive capital destruction”. And he says a significant catalyst will be the trillion-dollar off-balance-sheet commitments to data centres that companies can’t build on time.<\/p><p>But everybody – banks, investors, the general public – knows what is coming, and continues to put money into AI. This is because, as in the case of most bubbles past and present, speculation is rational if one player thinks there’s a greater fool out there. From the South Sea Bubble of 1720 to John Law’s Mississippi scheme to the dotcom bubble of the 1990s and 2000s – it’s all the same: greed, FOMO, and ‘greater fool’ theory were powerful enough to fuel speculation beyond all expectation.<\/p><p>But in those cases, the companies in question sold products at arms length from investors, in the far-off New World, or in the aether of the internet. AI companies, in contrast, have a concrete presence in people’s lives through data centres – one that people are keenly aware of in a resource-scarce world.<\/p><p>Robert Walpole, who went on to be the first prime minister of Great Britain, famously spoke out against speculative investment in the South Sea Company, which had a trade monopoly priced at twice the value of all the land in Britain. At the time, people compared him to a hoarse raven, croaking omens of evil in vain. People like Justin Pearson, who are leading the charge against data centres, are different. They campaign in the real world, creating a physical blockade to AI development which may trigger the revaluation everyone is waiting for.<\/p>",
+  "pump-fun-go": "<p>Back in June, in a corner of the internet popular with some, but off the radar of most, someone posted a bounty.<\/p><p>“Interview Henry Nowak’s killer’s family,” it read. “The more viral the interview the better!”<\/p><p>Whoever completed the bounty, and provided evidence, was offered a sum in the cryptocurrency ‘SOL’, worth about $24,000.<\/p><p>The bounty was posted on a platform called ‘Pump.fun GO’, which had launched just days before, promising users the power to “pay anyone to do anything”. Pump.fun was originally just a memecoin platform, which let users launch tokens on the blockchain with almost no expertise, upfront costs, or inherent value.<\/p><p>That’s the whole point of these markets – they’re entirely speculative. Investors make money if they buy a token like ‘Fartcoin’ or ‘Dogecoin’ during the buying frenzy, and lose money if they haven’t cashed out when it crashes. A report by Solidus Labs found that 96.6% of over 7m Pump.fun tokens were ‘pump-and-dump’ or rug-pull schemes.<\/p><p>The real currency on Pump.fun is attention. The more attention a token attracts, the more money it garners from investors, encouraging developers to perform extreme marketing stunts to promote their tokens, including punching themselves in the face, setting themselves on fire, faking overdoses and so on.<\/p><p>Pump.fun management leaned into this when they set up the GO platform, which managed to directly incentivise humiliation. Bounties are put in escrow, paying out on the successful completion of some outlandish dare: tattoo a memecoin name on your forehead; quit your job on camera; interview the family of Henry Nowak’s killer.<\/p><p>These dares are still typically linked to tokens, and promote them indirectly. In fact, many of them pay out with a given amount of the same token, drawing accusations of ‘circular grifting’.<\/p><p>The Henry Nowak dare was among the most eye-catching, because it didn’t rely on humiliation. Whoever set it up was using a pool of investor cash to pay for something else: justice – or their vision of justice, where individuals would get the answers traditional media couldn’t.<\/p><p>Thousands of people who have never met, and will never meet, can now pool an untraceable set of resources to “pay anyone to do anything”. Pump.fun used to be a place where people bet on nothing, and now it lets people invest in worryingly concrete actions in the real world.<\/p>",
+  "company-towns": "<p>When someone talks about ‘company towns’, certain images may spring to mind: picturesque rows of identical houses in places like Bournville, UK; happy workers of a bygone time, enjoying the amenities provided by a paternalistic employer; people working, living, and worshipping side by side.<\/p><p>The deal, in theory, is that labour and capitalism work together for mutual benefit. One hand washes the other. An employer provides better working conditions and, in return, they get better workers.<\/p><p>Even though company towns seem like a thing of the past, Elon Musk is on his way to building a second town in Louisiana. One year into the incorporation of his original city, Starbase, now is a good time to ask the question: are company towns making a comeback? And if so, what’s changed?<\/p><h3>Pullman, Illinois, 1880.<\/h3><p>The best, and most infamous, illustration of the dynamics between labour and capital is a company town called Pullman, in Illinois.<\/p><p>The year was 1880. George Pullman, an American industrialist, had invented the aptly named Pullman car, a luxury overnight train carriage for the American middle class. To cater to the needs of his passengers, Pullman hired former slaves, who he believed to be well-suited to long hours of deferential service work.<\/p><p>His business model was a roaring success: Pullman cars were a sensation, and he employed thousands of workers to build them for lease to railway companies.<\/p><p>It was in this context that Pullman bought 4,000 acres of land, just 14 miles south of downtown Chicago. He built houses, shops, churches, entertainment, libraries and everything necessary to meet the needs of about 12,000 white workers and their families. The town was named Pullman – again, apt.<\/p><p>But why? Pullman was by no measure a philanthropist, but he had concerns, like many industrialists of the time, about the reliability of his labour force, due in large part to the lack of a state or federal-level welfare system.<\/p><p>In his own town, Pullman could keep his workers healthy and sober, and make it harder to leave. Housing his workers outside Chicago also kept them away from labour unions, and allowed Pullman to retrieve some of the money spent on wages as rent. Every dollar spent in the town, all the food bought, rent for houses, the church, it all went back to Pullman’s company. He’d achieved vertical integration, except not in the production chain, but in his employees’ lives.<\/p><p>In 1893, everything went wrong. Orders for the Pullman car began to slump, but George had already guaranteed a 6% annual return to investors in his town. To protect his company’s margins while keeping up the gains from rent in town, Pullman slashed workers’ wages by 25% and kept rents high.<\/p><p>A strike ensued. When Pullman refused to give in, the American Railway Union got involved, and a localised strike turned into nationwide action by 250,000 railroad workers – the biggest sympathy strike in US history. It brought the economy to a halt, as no goods or people could be transported by railroad.<\/p><p>Federal troops descended on Pullman, Illinois, and the strike became a riot. The story didn’t end well for Pullman’s workers, but the whole affair was so scandalous that it permanently damaged the reputation of company towns, which faded almost entirely away in the following decades.<\/p><p>That is, until America’s next best magnate came along.<\/p><h3>Starbase, Texas. 2026<\/h3><p>On the southernmost tip of Texas, separated from Mexico only by a narrow sliver of the Rio Grande, sits Starbase: “a city unlike any place on Earth, with humanity’s future in space unfolding in plain view for the public.”<\/p><p>The coastal Texan city is by many measures lovely. On its eastern border is Boca Chica Beach, which fronts onto the ‘Gulf of America’. In most other directions, the main settlement is surrounded by wildlife reserves.<\/p><p>When Oliver Laughland, the Guardian's US southern bureau chief, went to visit Starbase in May 2025, he encountered a community with few comparisons.<\/p><p>Driving in, the first people he met were rocket fans. “The idea of colonising Mars is an extremely alluring prospect to many people,” said Laughland. “People who basically dropped their entire lives to go and live out there and experience what it was like, because they felt so connected to the mission.”<\/p><p>Speaking to one enthusiast, Laughland was struck by the \"almost spiritual experience” he described on seeing a launch of a SpaceX rocket – closer than ever possible at a NASA launch.<\/p><p>Elon Musk had the idea to build a city well over a decade ago. In 2011, at a National Press Club event, Musk mentioned wanting to build a commercial launch site to take over from the Cape Cannaveral base from which SpaceX has, to this day, launched most of its satellites.<\/p><p>His motivation was logistical. Cape Cannaveral is an airbase, where Musk's activities are more limited. His own private launch site could be designed for a rapid, experimental development cycle, and built from scratch to match the scale of his Starship rockets. In 2012, two years before the official announcement of a base in Cameron County, SpaceX quietly bought a number of properties in Boca Chica Village, where a few dozen people were then living.<\/p><p>Boca Chica, like more than 96% of land in America, was unincorporated, meaning it was not administered by any particular town or city authority – it was just <em>there<\/em>, under the top level authority of Cameron County and more broadly, the state of Texas. The small parcels of American land which belong to a municipal authority today all had to be claimed at some point: People settled, drew a big circle around their houses, and declared themselves by God to be living in a city. And that’s what Space X did after more than a decade of land acquisition and building.<\/p><p>But Starbase is different from the ‘traditional’ company town. In the past, individuals or companies bought up huge parcels of land, and administered them like a feudal lord. In Starbase’s case, SpaceX can’t technically administer the city. Instead, its employees had to vote for incorporation, and hold public elections to appoint themselves to administrative roles.<\/p><p>In theory, the mayor of Starbase, SpaceX VP Bobby Peden, could quit the company, deny all planning permissions it requests, and make life miserable for Elon Musk. But, obviously, that hasn’t happened. Instead, Starbase is run as something close to Musk’s private demesne: a 12-foot bust of him stands on the road into town, and the city’s new police force, which already patrols in Cybertrucks, answers to a commission made up of SpaceX employees. Almost every resident is a SpaceX employee or family member, and they vote as a bloc. The vote to establish Starbase as a city won 212 to 6.<\/p><p>And yet, despite the homogeneous make up of SpaceX’s city (residents are all well-paid technical staff who have chosen to work for the company and move to Starbase), they still have to rub shoulders with the rest of the world. This is where conflict arises.<\/p><p>Part of the reason Cameron County was chosen as a site for Starbase was the affordability of the land. About 24.3% of the county’s population lives below the poverty line, which is nearly double both the Texas and overall US average.<\/p><p>The county’s main city, Brownsville, is about 20 miles from Starbase, and home to many of Starbase’s 3,100+ workforce who commute, rather than living in Musk’s city.<\/p><p>And how does life change when big tech moves in? Rents rise, neighbourhoods' homes transform into AirBnBs, and local residents are priced out of housing, food, and leisure. Between 2014 and 2025, median house prices in Cameron County went up 125%, to $254,000.<\/p><p>Advocates ask, “Do people not want new money being injected into a local economy? Is it a bad thing for a big company to set up shop in your town?”<\/p><p>And the response resembles that of residents across the US during the last year of datacentre expansion: when a tech company appears in a person’s neighborhood, promising to change the world, people don’t buy it. More important to them is the immediate negative impact on their community: utility prices going up, environmental damage, localised pollution, and new jobs going to workers who have been deployed from outside.<\/p><p>Laughland describes a wariness that people in Brownsville now feel about SpaceX. Though Musk did provide a degree of philanthropic investment into their community, “the promises of more jobs, of better public infrastructure, all that sort of stuff, are often outweighed by the real consequences of bringing that level of industry to a town, which is gentrification and infrastructure damage.”<\/p><p>As Musk announces a new $100bn spaceport to be built in Vermilion Parish, Louisiana – another impoverished American neighborhood – one can’t help but imagine recent history repeating.<\/p><h3>The economics<\/h3><p>Both Starbase and Pullman exemplify the opportunities available to a business that is willing to integrate not just vertically or horizontally in a supply chain, but beyond the realm of business and into its employees lives.<\/p><p>And yet, that power dynamic can become complicated. Pullman ended in disaster, as conflict erupted between an overbearing, paternalistic employer, and its hard-done employees. A term coined by the economist Joan Robinson is useful here: monopsony, which describes the system in which a single employer dominates a local labour market and can therefore depress wages.<\/p><p>George Stigler, who won the Nobel Prize in Economics for his studies on ‘regulatory capture’. argued that industries use their resources to extend beyond the financial world and acquire coercive state powers. By leaving the restrictive environment of Cape Canaveral and incorporating its own site, SpaceX has done exactly that. The concentrated, well-organised group of Musk’s employees can vote with a single mind to control planning permission on their new site and wield more control over launches than if they were in Cape Canaveral.<\/p><p>Stigler’s theoretical framework can also be used to describe what happens when the needs of SpaceX rub against those of its neighbours, and how it might tackle any conflict. Stigler explains that power in a democracy flows toward small groups of organised people with high individual stakes. Contrast the single-minded SpaceX employees with the residents of Cameron County: the denizens of the county at large may find Starbase’s presence detrimental, but despite outnumbering SpaceX employees many times over, their interests are more diverse and dispersed broadly across different categories, among a larger, less-organised group. For now, the corporation has the political advantage.<\/p>",
+  "why-stocks-dont-matter": "<p>A lot of people are nervous about the fallout of an AI ‘bubble’, and as a result, are fixating on a few big US tech stocks. They grow more suspicious by the day: ‘If indexes are weighted so heavily towards a few stocks, isn’t the system full of risk?’ And then, fuelling further anxiety, the worst happens – all it takes is one bad headline and billions of dollars are erased from tech stock valuations. That’s when the fear creeps in: ‘Even if I’m not personally invested, isn’t the global economy in a precarious position?’<\/p><p>Maybe. But before we get away from ourselves, there are two points that need to be made about the way stock markets work. The first is about concentration, the second is about fluctuation.<\/p><p>The stock market and the Premier League have a similar problem. Success is rewarded with money, which leads to more success, until gradually you get a “concentration of winners”. And yet, we’re all taught from our earliest years that you shouldn’t put all your eggs in one basket.<\/p><p>As of late October, the top seven stocks in the S&amp;P 500 – the 500 biggest companies listed on US stock exchanges – account for roughly 32% of its total value, which is a higher concentration than other, similar indexes. From a global perspective, the MSCI ACWI (All Country World Index) has a 64% weighting towards US stocks. Again, quite concentrated.<\/p><p>But how remarkable is this? A 2026 paper by researchers Per Bye, Jens Soerlie Kvaerner and Bas J.M. Werker attempts to answer this question by looking at all the stocks traded on major US exchanges since 1926. While the weighting of US exchanges towards a handful of stocks has increased since 2010, they conclude that this is “neither historically unprecedented nor internationally anomalous”. Markets were similarly concentrated at various points between the 1930s and 1960s, they say.<\/p><p>Now, we could phrase this another way and say that current US market concentration hasn’t been this high since the 1930s. But there are other pieces of evidence to consider too. In another recent paper, Arizona State professor Hendrik Bessembinder analysed the investment outcomes of 30,000 US stocks since 1926. He found that just <strong>46 firms were responsible for half of the $91 trillion in net wealth creation of the last century<\/strong>. Just 3.72% or 1,082 listed firms accounted for the <em>entire<\/em> $91 trillion of net wealth created for shareholders above the value of short-term government debt. Every other stock was a loser. Taken together, the other 96.3% did no better than Treasury bills, and 59% of firms left shareholders worse off.<\/p><p>So concerns about concentration belie the fact that, in general, only a small number of stocks – in whatever fad sector of the moment – have been responsible for most returns of the last hundred years. In short, concentration is the norm.<\/p><p>Now to tackle fluctuation. The AI market is certainly volatile. Earlier this year, a rumour circulated that China had developed its own deep-ultraviolet lithography tools, which could give it an edge in the chip supply chain. The Nasdaq stock market took a hit. Almost overnight, Nvidia lost a quarter of a trillion dollars in market cap. Everything seemed rather fragile for a moment.<\/p><p>Except this is “paper value” being lost, not actual cash. Market capitalisation reflects the last price paid for a stock – an estimate of its total future value – <em>not<\/em> the amount of money everyone has already invested. These sorts of measurements are inherently volatile, as the fears and bullishness of today are multiplied forwards by a few decades.<\/p><p>It may surprise some to know that the median US stock has, since 1985, collapsed in value by 85% before clawing its way back to about 90% of its peak value. Giants like Amazon and Nvidia have both fallen by 90% or more in the past before rallying spectacularly.<\/p><p>To put this another way, Robert Shiller, a Nobel laureate in economics, wrote a famous paper in 1981 which proved that, in short, market fluctuations do not reflect changes in dividends for a company. Likewise, the wild changes in stock prices don’t reflect wild changes in a company’s long-term value.<\/p><p>None of this is to say that stock markets don’t matter. Real money is on the line, and the reactions of investors are useful to observe. But in general, a person’s pulse shouldn’t go up and down depending on the health of a few big tech stocks. Markets can be more stable than they appear.<\/p>",
+  "china-ai-bet": "<p>Right now we’re on the brink of a huge technological revolution. As AI rapidly advances, the prospect for transformational change in the labour market, in the sciences, and in national security becomes more real. Many are sceptical about the potential of this technology, and the potential risks. Fair enough. But what matters now is that the Chinese and US governments are both committed to winning the so-called ‘AI race’.<\/p><p>China knows that technological advances create economic advantages which in turn create political advantages. If Donald Trump’s statements and the US National Security Strategy mean anything, America shares this sentiment. Whoever perfects their AI system first stands to capture economic gains quickly, and acquire a significant military advantage, particularly in cyberdefence. In other words, winning the AI race might be the key to unlocking success in the next century.<\/p><p>Right now, the picture of China’s AI uptake looks very different from America’s. So different, in fact, that it suggests that success in AI might take more than one form. The US dominates in terms of computing power. 72% of global compute since 2022 has ended up in the US, compared to just 10% in China. China’s AI infrastructure spend is expected to reach $139bn this year, compared to the US’s $581bn projected spend by the time this magazine is released. Take any ranking you like, and US AI models are at least six months ahead of Chinese ones in their capabilities.<\/p><p>The frontier of AI, for the present, is owned by America. America and its allies also dominate the supply chain, with almost every advanced AI chip passing at some point through Taiwan, the Netherlands, South Korea or Japan.<\/p><p>But despite all this, Chinese AI models are more widely used. China’s focus so far has been on developing open-weight models. This means that the internal training parameters for its models are free to download, customise and run locally without vendor fees. These models are extremely efficient and cheaper for many users. As a result, they accounted for two-thirds of the tokens used on OpenRouter (a centralised API companies use to access different AI models) in September.<\/p><p>China is also the world leader in embodied AI – using AI to control physical robots: in 2025, China installed 354,000 industrial robots, 59% of the global total. And this focus on manual labour replacements reveals a different economic aim from the US. Owing to a declining fertility rate and an ageing population, by 2050 China’s working-age population will have shrunk by 25%. By 2100, its total population is projected to fall by more than half, according to the UN. From China’s perspective, the only way to maintain its status as a dominant industrial power is to use physical AI to replace the workforce.<\/p><p>While China does not have the most advanced models, you can look at them for a vision of how AI might affect the labour market in the near future. Already, on the outskirts of Beijing you can see fully autonomous lorries driving along a specially built unmanned route; in Shenzhen, cleaners, couriers, baristas and drivers are all working alongside (and in many cases, training) their robot replacements.<\/p><p>But what will the future look like? Before examining the possibilities, it’s important to note how quickly this technology is advancing. According to METR, an AI evaluation non-profit, the length of tasks AI can complete doubles roughly every seven months. As AI models improve, they can also be used as tools to train their successors. This is called recursive self-improvement, and was hinted at in Anthropic’s IPO prospectus, when it said “over 90% of the contributions to our codebase in September 2026 were written by Claude.”<\/p><p>This heightens the stakes in the AI race between China and the US. A six-month lead in US models might not seem like a lot, but in practice that means the US has more powerful tools to train its own models, and so small gains have a sort of multiplier effect. If either the US or China reaches AGI – a level of artificial intelligence where a model can match or outperform humans in any intellectual domain – the AI race would have a clear winner. Whichever country got to that point could run millions of parallel expert-level AI instances to achieve its objectives – what Anthropic CEO Dario Amodei describes as a “country of geniuses in a datacenter”.<\/p><p>There are three main levers that will affect China’s ability to compete in this race to AGI. The first is access to chips. Currently, China acquires computing power in four ways: domestic production, legally importing US chips, smuggling US chips, and remotely accessing data centres outside of China. If current trends continue, US chips will make up 65% of China’s stock by the end of 2027. So aggressive export controls could be used to throttle China’s progress.<\/p><p>Offsetting this potential issue is the second lever: model distillation. Model distillation is a technique which sees one AI model teach another. Training a frontier model takes a huge amount of compute, raw data, and refinement; copying one is much less resource-intensive. OpenAI and Anthropic use this distillation to train smaller, faster agents from their frontier models. But they have to contend with the fairly successful effort from Chinese labs to do the same.<\/p><p>This means that even without the advanced computing power, Chinese labs have become <strong>fast followers<\/strong>. According to the Institute for Progress, today’s 16x US compute advantage <em>should<\/em> yield a 13-month lead in its models’ capabilities, but thanks to distillation, it’s only 6 months.<\/p><p>With successful espionage, China could take this fast-follower success to the extreme. If it managed to not just train its AI from US frontier models, but steal their weights entirely (i.e. the parameters controlling a model’s intelligence), it could catch up overnight. Some AI forecasters believe this is a matter of when, not if.<\/p><p>But none of this puts China ahead of the US. This brings us to the final lever – political leadership. One thing China is generally better than the US at is galvanising public funds towards important national projects. Right now, the US has more computing power, but it is still split between competing AI companies. If China felt the urgent need to accelerate frontier development, it could requisition a large segment of the country’s resources towards training its own frontier model, perhaps aided by stolen weights from the US.<\/p><p>All this may seem far-fetched, but it’s likely that we’ll see some stirrings in that direction in the next year. AI models will become more advanced, more reports of Chinese espionage will come out, there will be more friction on trade, on Taiwan, on how both governments intervene with private enterprise to protect their national interests. It seems inevitable at this stage that China will stay hot on the heels of the US, and less likely that it will overtake in terms of model intelligence. However, China may well race ahead in the widespread practical adoption of AI, and capture the economic advantages (and potentially, social harms) long before the West.<\/p>",
+  "hostile-by-design": "<p>History has taught us that technological breakthroughs lead to economic ones, which in turn lead to political ones. Today, that means this is big tech’s world – and we’re just living in it.<\/p><p>This year, business headlines have been ruled by the vicissitudes of the tech sector. Major milestones like Anthropic’s IPO prospectus have been undermined by the post-midterm stock market rout. For every AI bull, there is a bear, and their battle has been fearsome.<\/p><p>This polarisation in the markets has come alongside a perceived untethering between big tech and its consumers, as their technology shifts from serving consumers to potentially harming them. Zooming out, do the fears about AI reflect fears we hold about big tech as a whole? Those fears include power-seeking behaviour; goals that are misaligned with the customers notionally being served; perhaps even a generalised dishonesty.<\/p><p>While these questions take up a lot of space in the news, it’s also worth noting some of the other business trends this year that affect daily life.<\/p><p>As the cost of living squeezes spending in many parts of the world, the customer base for legacy brands is shrinking. These days, brand identity is not enough, and the burden is now on companies such as Nike, Netflix, PepsiCo, and General Mills to prove their worth to customers. In many ways, this seems positive: as consumer demand shrinks, and becomes more discerning, retailers now have to compete more aggressively to win over customers.<\/p><p>Meanwhile, financial trends on Wall Street are changing the fate of brands we interact with regularly. A decade ago, interest rates were low, and money was cheap. This led to a swathe of private equity buyouts of different companies, ultimately aimed at making them public again and raking in a profit. And yet, interest rates are now rebounding, and investors have bigger expectations for the profitability of a newly listed company. This means brands like Asda, Barnes &amp; Noble, and Ancestry.com are going stale on private equity books. In fact, there’s a global backlog of over 31,000 unsold portfolio companies, locking up roughly $3.7 trillion of capital, according to the <em>New York Times<\/em>.<\/p><p>So the business world is in two minds. If you’re a tech company, great – you can have as much money as you want, and an eye-watering valuation multiple if you go public. If not, a buzzy founders’ story and positive projections might not be enough. Companies have to hustle to raise money now, and increase revenue enough to impress investors. They have to be scrappy, creative and mean. This really is big tech’s world – everyone else has to fight for their place in it.<\/p>",
+  "mother-naked": "<p>It’s 1434 AD. A travelling bard bursts into a feast at Durham Cathedral, damp from a storm raging outside. He is Modyr Nakett, a real singer who, at a single groat, was the lowest-paid bard in 200 years of surviving records.<\/p><p>The novel from County Durham author Glen James Brown subverts all expectations. The reader is promised a grand tale of the Fell Wraith, a spectre that terrorised the nearby village of Segerston (modern-day Sacriston). But as <em>Mother Naked<\/em>’s story unfolds, supernatural spectacle falls away to evil officials, feudal paranoia, and the real hardship of rural medieval life.<\/p><p>I don’t often read fiction. In the past, my interest has lain in poetry, because I love finely wrought, single-sitting reads. But this 250-page book is easy to tear through, and full of subversive devices and small-scale brilliance. Grand chivalric narratives are eschewed for the unvarnished reality of rural outcasts; balladry mixes with parable, which mixes with historical fiction; and my favourite of the lot: narratives nested within narratives like Russian dolls.<\/p>"
+};
+
+var DOCUMENTARIES = [];   // documentaries go here
+
+// Placeholder shown on the documentaries page until the first one is out.
+var DOCUMENTARY_PLACEHOLDER = [
+  ['h3', '[DOCUMENTARY TITLE]'],
+  ['p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'],
+  ['p', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
+  ['p', 'Coming soon.']
+];
+
+// Categories reachable from the map.
+var CATS = {
+  'guardian':           { title: 'The Guardian', items: function () { return WRITTEN.concat(GUARDIAN_VIDEO, PODCASTS_GUARDIAN); } },
+  'guardian-articles':  { title: 'The Guardian: Articles', items: function () { return WRITTEN; } },
+  'guardian-podcasts':  { title: 'The Guardian: Podcasts', items: function () { return PODCASTS_GUARDIAN; } },
+  'guardian-video':     { title: 'The Guardian: Video', items: function () { return GUARDIAN_VIDEO; } },
+  'tldr':               { title: 'TLDR News', items: function () { return VIDEOS.concat(DOCUMENTARIES, MAGAZINE); } },
+  'tldr-explainers':    { title: 'TLDR News: Explainers', items: function () { return VIDEOS; } },
+  'tldr-magazine':      { title: 'TLDR News: Magazine', items: function () { return MAGAZINE; } },
+  'tldr-documentaries': { title: 'TLDR News: Documentaries', items: function () { return DOCUMENTARIES; }, placeholder: DOCUMENTARY_PLACEHOLDER, soon: 'Coming soon' }
+};
+
+// The map. Boxes are 730 x 540 (wide) and 600 x 800 (narrow).
+// Hubs have a fixed centre [x, y]; each branch sits at an angle (degrees, 0 = right, 90 = down) around its hub.
+// Bubble size is set by the number of entries behind it, with a floor so every label stays readable.
+var NODES = [
+  { key: 'guardian', label: 'The Guardian', hub: true, wide: [215, 280], tall: [200, 190] },
+  { key: 'guardian-articles', label: 'Articles', parent: 'guardian', wide: -125, tall: 30 },
+  { key: 'guardian-podcasts', label: 'Podcasts', parent: 'guardian', wide: 140, tall: 120 },
+  { key: 'guardian-video', label: 'Video', parent: 'guardian', wide: 65, tall: -150 },
+  { key: 'tldr', label: 'TLDR News', hub: true, link: 'guardian', wide: [520, 280], tall: [380, 570] },
+  { key: 'tldr-explainers', label: 'Explainers', parent: 'tldr', wide: -70, tall: 150 },
+  { key: 'tldr-magazine', label: 'Magazine', parent: 'tldr', wide: 40, tall: 60 },
+  { key: 'tldr-documentaries', label: 'Documentaries', parent: 'tldr', wide: 115, tall: -150 }
+];
+var GAP = 26;                    // space between a hub and its branches
+var R_MIN = 44, R_RANGE = 36;    // smallest bubble, and how much the biggest branch adds
+var LEASH = 150;                 // the furthest a bubble can be stretched from its place
+var HOME_PULL = 3, LINK_PULL = 2.5, DAMPING = 4.5;   // gentle pull home, heavy damping: bubbles drift back rather than bounce
+
+// ===========================================================================
+// Cards
+// ===========================================================================
+var OVERLAY = { d: 'L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc', a: 'L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjUucG5n' };
+
+function guardianImage(i) {
+  return 'https://i.guim.co.uk/img/media/' + i[0] + '/' + i[1] + '/master/' + i[2] + '.jpg' +
+    '?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0' +
+    '&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=' + OVERLAY[i[4]] +
+    '&enable=upscale&s=' + i[3];
+}
+
+function el(tag, cls, text) {
+  var n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text) n.textContent = text;
+  return n;
+}
+
+function card(item, kindLabel) {
+  // Text-only entry (magazine): no link, no image.
+  if (item.x) {
+    var d = el(item.slug ? 'a' : 'div', 'card text');
+    if (item.slug) d.href = '#read-' + item.slug;
+    if (kindLabel) d.appendChild(el('span', 'kind caps', kindLabel));
+    d.appendChild(el('div', 'title', item.t));
+    if (item.sub) d.appendChild(el('div', 'sub', item.sub));
+    d.appendChild(el('div', 'excerpt', item.x));
+    d.appendChild(el('span', 'tag', '[' + item.tag + ']'));
+    return d;
+  }
+  var yt = !!item.id, plain = !!item.href;
+  var href = plain ? item.href : yt ? 'https://www.youtube.com/watch?v=' + item.id : 'https://www.theguardian.com/' + item.u;
+  var src = plain ? (item.img || null) : yt ? 'https://i.ytimg.com/vi/' + item.id + '/maxresdefault.jpg' : guardianImage(item.i);
+  var fallback = yt ? 'https://i.ytimg.com/vi/' + item.id + '/mqdefault.jpg' : null;
+  var tag = plain ? item.tag : yt ? item.c : item.s + ', the Guardian';
+
+  var a = el('a', 'card' + (yt ? ' yt' : ''));
+  a.href = href; a.target = '_blank'; a.rel = 'noopener';
+  if (kindLabel) a.appendChild(el('span', 'kind caps', kindLabel));
+  var thumb = el('div', 'thumb' + (item.tall ? ' tall' : ''));
+  if (src) {
+    var img = document.createElement('img');
+    img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+    img.onerror = function () {
+      if (fallback && img.src !== fallback) { img.src = fallback; } else { img.remove(); }
+    };
+    if (fallback) {
+      // YouTube serves a tiny grey placeholder when the large thumbnail is missing.
+      img.onload = function () { if (img.naturalWidth <= 120 && img.src !== fallback) img.src = fallback; };
+    }
+    img.src = src;
+    thumb.appendChild(img);
+  } else {
+    thumb.appendChild(el('span', 'label', item.label || ''));
+  }
+  a.appendChild(thumb);
+  var text = el('div', 'title', item.t);
+  text.appendChild(el('span', 'tag', '[' + tag + ']'));
+  a.appendChild(text);
+  return a;
+}
+
+// ===========================================================================
+// All work: three aligned columns that load as you scroll
+// ===========================================================================
+var COLUMNS = [
+  { label: 'Written', list: WRITTEN },
+  { label: 'Video', list: VIDEOS },
+  { label: 'Podcast', list: PODCASTS_YT.concat(PODCASTS_GUARDIAN) }
+];
+var BATCH = 5;
+var rows = document.getElementById('rows');
+var statusLine = document.getElementById('status');
+var total = Math.max.apply(null, COLUMNS.map(function (c) { return c.list.length; }));
+var shown = 0;
+var observer = null;
+
+function addBatch() {
+  var end = Math.min(shown + BATCH, total);
+  for (var n = shown; n < end; n++) {
+    var trio = el('div', 'trio');
+    COLUMNS.forEach(function (col) {
+      trio.appendChild(col.list[n] ? card(col.list[n], col.label) : el('div', 'blank'));
+    });
+    rows.appendChild(trio);
+  }
+  shown = end;
+  statusLine.textContent = shown >= total ? 'That’s everything for now' : 'More below';
+  if (shown >= total && observer) observer.disconnect();
+}
+
+function startAll() {
+  if (shown === 0) addBatch();
+  if (observer || shown >= total) return;
+  if (!('IntersectionObserver' in window)) { while (shown < total) addBatch(); return; }
+  observer = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting && shown < total) {
+      addBatch();
+      // Re-arm, so a tall screen that still shows the marker keeps loading.
+      if (shown < total) { observer.unobserve(statusLine); observer.observe(statusLine); }
+    }
+  }, { rootMargin: '600px 0px' });
+  observer.observe(statusLine);
+}
+
+// ===========================================================================
+// The map
+// ===========================================================================
+var map = document.getElementById('map');
+var lines = document.getElementById('lines');
+var narrow = window.matchMedia('(max-width: 760px)');
+var box = { W: 730, H: 540 };
+var placed = {};     // key -> { x, y, r, dx, dy, node, el }
+
+function drawLines() {
+  lines.innerHTML = '';
+  NODES.forEach(function (n, index) {
+    var from = n.parent || n.link;
+    if (!from) return;
+    var p = placed[n.key], q = placed[from];
+    var x = p.x + p.dx, y = p.y + p.dy, qx = q.x + q.dx, qy = q.y + q.dy;
+    var mx = (x + qx) / 2, my = (y + qy) / 2, bend = (index % 2 ? 1 : -1) * 0.14;
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M' + qx + ' ' + qy + ' Q' + (mx - (y - qy) * bend) + ' ' + (my + (x - qx) * bend) + ' ' + x + ' ' + y);
+    lines.appendChild(path);
+  });
+}
+
+function place(p) {
+  p.el.style.left = ((p.x + p.dx) / box.W * 100) + '%';
+  p.el.style.top = ((p.y + p.dy) / box.H * 100) + '%';
+}
+
+function drawMap() {
+  var tall = narrow.matches;
+  box = tall ? { W: 600, H: 800 } : { W: 730, H: 540 };
+  var minFont = tall ? 17 : 13;     // smallest label size, in map units
+  Array.prototype.slice.call(map.querySelectorAll('.bubble')).forEach(function (b) { b.remove(); });
+  lines.setAttribute('viewBox', '0 0 ' + box.W + ' ' + box.H);
+  placed = {};
+
+  // Size: area grows with the number of entries, measured against the biggest branch.
+  var counts = {}, biggest = 1;
+  NODES.forEach(function (n) {
+    counts[n.key] = CATS[n.key].items().length;
+    if (n.parent) biggest = Math.max(biggest, counts[n.key]);
+  });
+  function longestWord(n) { return Math.max.apply(null, n.label.split(' ').map(function (w) { return w.length; })); }
+  function radius(n) {
+    var byCount = R_MIN + R_RANGE * Math.sqrt(counts[n.key] / biggest);
+    var readable = minFont * longestWord(n) * 0.5 / 1.4;   // big enough for the label at the smallest size
+    return Math.max(byCount, readable);
+  }
+
+  NODES.forEach(function (n, index) {
+    var r = radius(n), spot = tall ? n.tall : n.wide, x, y;
+    if (n.parent) {
+      var hub = placed[n.parent], reach = hub.r + r + GAP, angle = spot * Math.PI / 180;
+      x = hub.x + reach * Math.cos(angle); y = hub.y + reach * Math.sin(angle);
+    } else { x = spot[0]; y = spot[1]; }
+
+    // The two outlet bubbles are not links; the branches are.
+    var b = el(n.hub ? 'div' : 'a', 'bubble' + (n.hub ? ' hub' : ''));
+    if (!n.hub) { b.href = '#' + n.key; b.draggable = false; }
+    var font = Math.min(r * 0.38, (2 * r * 0.7) / (longestWord(n) * 0.5));
+    b.style.width = b.style.height = (2 * r / box.W * 100) + 'cqw';
+    b.style.fontSize = (font / box.W * 100) + 'cqw';
+    b.style.animationDuration = (6 + (index % 4)) + 's';
+    b.style.animationDelay = (-index * 0.9) + 's';
+    b.appendChild(el('span', '', n.label));
+    b.appendChild(el('small', '', counts[n.key] ? String(counts[n.key]) : (CATS[n.key].soon || 'Soon')));
+    map.appendChild(b);
+    placed[n.key] = { x: x, y: y, r: r, dx: 0, dy: 0, vx: 0, vy: 0, el: b, near: neighbours(n.key) };
+    place(placed[n.key]);
+    makeDraggable(placed[n.key]);
+  });
+  drawLines();
+}
+
+// Click and hold to pull a bubble around. Every bubble is on a spring: the one you hold stretches
+// away from its place with growing resistance, its neighbours get tugged along, and on release
+// everything bounces back. Touch screens keep normal tapping and scrolling.
+var held = null, ticking = false, lastTick = 0;
+
+function neighbours(key) {
+  var out = [];
+  NODES.forEach(function (n) {
+    var other = n.parent || n.link;
+    if (n.key === key && other) out.push(other);
+    if (other === key) out.push(n.key);
+  });
+  return out;
+}
+
+function tick(now) {
+  var dt = Math.min((now - lastTick) / 1000, 1 / 30); lastTick = now;
+  var moving = !!held;
+  Object.keys(placed).forEach(function (key) {
+    var p = placed[key];
+    if (held && held.p === p) return;
+    var fx = -HOME_PULL * p.dx, fy = -HOME_PULL * p.dy;
+    p.near.forEach(function (k) { var q = placed[k]; fx += LINK_PULL * (q.dx - p.dx); fy += LINK_PULL * (q.dy - p.dy); });
+    p.vx += (fx - DAMPING * p.vx) * dt; p.vy += (fy - DAMPING * p.vy) * dt;
+    p.dx += p.vx * dt; p.dy += p.vy * dt;
+    if (Math.abs(p.dx) + Math.abs(p.dy) > 0.15 || Math.abs(p.vx) + Math.abs(p.vy) > 1) moving = true;
+    else { p.dx = p.dy = p.vx = p.vy = 0; }
+    place(p);
+  });
+  drawLines();
+  if (moving) requestAnimationFrame(tick); else ticking = false;
+}
+function wake() { if (!ticking) { ticking = true; lastTick = performance.now(); requestAnimationFrame(tick); } }
+
+function letGo() {
+  if (!held) return;
+  held.p.el.classList.remove('dragging');
+  held = null;
+  wake();
+}
+
+function pull(e) {
+  if (!held) return;
+  if (e.buttons === 0) { letGo(); return; }     // the button came up somewhere we did not hear about
+  var p = held.p, scale = box.W / map.getBoundingClientRect().width;
+  var dx = held.dx + (e.clientX - held.px) * scale, dy = held.dy + (e.clientY - held.py) * scale;
+  if (Math.abs(e.clientX - held.px) + Math.abs(e.clientY - held.py) > 4) { held.moved = true; p.el.classList.add('dragging'); }
+  // Rubber band: easy at first, then harder and harder, never past LEASH.
+  var far = Math.sqrt(dx * dx + dy * dy);
+  if (far > 0) { var eased = LEASH * (1 - Math.exp(-far / LEASH)); dx = dx / far * eased; dy = dy / far * eased; }
+  p.dx = dx; p.dy = dy; p.vx = p.vy = 0;
+  place(p); wake();
+}
+
+// Listen on the whole window, so letting go anywhere (even outside the page) releases the bubble.
+window.addEventListener('pointermove', pull);
+window.addEventListener('pointerup', letGo);
+window.addEventListener('pointercancel', letGo);
+window.addEventListener('blur', letGo);
+document.addEventListener('mouseleave', function (e) { if (held && e.buttons === 0) letGo(); });
+
+function makeDraggable(p) {
+  var suppressClick = false;
+  p.el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  p.el.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'touch' || e.button !== 0) return;
+    held = { p: p, px: e.clientX, py: e.clientY, dx: p.dx, dy: p.dy, moved: false };
+    suppressClick = false;
+  });
+  p.el.addEventListener('pointerup', function () { if (held && held.p === p) suppressClick = held.moved; });
+  // A drag should not count as a click on the link.
+  p.el.addEventListener('click', function (e) { if (suppressClick) { e.preventDefault(); suppressClick = false; } });
+}
+
+drawMap();
+if (narrow.addEventListener) narrow.addEventListener('change', drawMap);
+
+// ===========================================================================
+// Pages
+// ===========================================================================
+var views = { home: document.getElementById('view-home'), all: document.getElementById('view-all'), cat: document.getElementById('view-cat'), contact: document.getElementById('view-contact'), read: document.getElementById('view-read') };
+
+function show(name) {
+  Object.keys(views).forEach(function (k) { views[k].hidden = k !== name; });
+  // On the landing page the name sits beside the map, so the header shows the menu only.
+  document.getElementById('top-name').hidden = name === 'home';
+  Array.prototype.slice.call(document.querySelectorAll('[data-nav]')).forEach(function (a) {
+    if (a.getAttribute('data-nav') === name) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+}
+
+function route() {
+  var key = location.hash.replace('#', '');
+  if (key === 'all') {
+    show('all'); startAll();
+  } else if (key === 'contact') {
+    show('contact');
+  } else if (key.indexOf('read-') === 0 && ARTICLE_HTML[key.slice(5)]) {
+    var piece = MAGAZINE.filter(function (m) { return m.slug === key.slice(5); })[0];
+    document.getElementById('read-tag').textContent = piece.tag;
+    document.getElementById('read-title').textContent = piece.t;
+    document.getElementById('read-sub').textContent = piece.sub || '';
+    document.getElementById('read-sub').hidden = !piece.sub;
+    document.getElementById('read-body').innerHTML = ARTICLE_HTML[piece.slug];
+    show('read');
+  } else if (CATS[key]) {
+    var cat = CATS[key], items = cat.items();
+    var grid = document.getElementById('cat-grid'), prose = document.getElementById('cat-prose');
+    document.getElementById('cat-title').textContent = cat.title;
+    grid.innerHTML = ''; prose.innerHTML = '';
+    items.forEach(function (item) { grid.appendChild(card(item)); });
+    prose.hidden = items.length > 0;
+    if (!items.length) (cat.placeholder || [['p', 'Nothing here yet.']]).forEach(function (part) { prose.appendChild(el(part[0], '', part[1])); });
+    show('cat');
+  } else {
+    show('home');
+  }
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
