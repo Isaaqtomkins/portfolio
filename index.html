@@ -61,6 +61,10 @@ a.bubble:hover, a.bubble:focus-visible { background: var(--ink-deep); border-col
 #rows { display: flex; flex-direction: column; gap: 32px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px 24px; }
 .page-title { font-size: 34px; margin-bottom: 28px; }
+.tracker { display: flex; flex-wrap: wrap; gap: 16px 56px; align-items: flex-end; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 20px 0 16px; margin: -8px 0 36px; }
+.tracker div { display: flex; flex-direction: column; gap: 4px; }
+.tracker .big { font-size: 52px; line-height: 1; }
+.tracker-note { flex-basis: 100%; font-size: 14px; font-style: italic; }
 .prose { max-width: 620px; display: flex; flex-direction: column; gap: 16px; font-size: 20px; line-height: 1.35; }
 .prose h3 { font-size: 26px; margin-top: 12px; }
 #view-read .page-title { margin: 8px 0 8px; max-width: 760px; font-size: 40px; line-height: 1.05; }
@@ -101,6 +105,8 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
   .trio { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .trio .blank { display: none; }
   .kind { display: block; }
+  .tracker { gap: 16px 32px; }
+  .tracker .big { font-size: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bubble { animation: none; transition: none; }
@@ -151,6 +157,12 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
   <!-- One category -->
   <section id="view-cat" hidden>
     <h2 class="page-title" id="cat-title"></h2>
+    <div class="tracker" id="tracker" hidden>
+      <div><span class="big" id="t-views"></span><span class="caps">Total views</span></div>
+      <div><span class="big" id="t-hours"></span><span class="caps">Watch hours</span></div>
+      <div><span class="big" id="t-count"></span><span class="caps">Videos</span></div>
+      <p class="tracker-note" id="t-note"></p>
+    </div>
     <div class="grid" id="cat-grid"></div>
     <div class="prose" id="cat-prose" hidden></div>
   </section>
@@ -212,30 +224,32 @@ var WRITTEN = [
   { t: '‘I don’t like being stuck in an office’: the young people helping plant a ring of trees around London', s: 'Environment', u: 'environment/2026/jun/17/young-people-mission-to-plant-a-ring-of-trees-around-london', i: ['c74d5cf05226e0e5debc2e28bda2f77abeb47242', '61_0_5000_4000', '5000', '6cda640df836bb9b4340b70de9f22a45', 'd'] }
 ];
 
+// stats: [views, watch hours], from YouTube Studio. Update these and STATS_DATE together.
+var STATS_DATE = '17 November 2026';
 var VIDEOS = [
-  { id: 'n4HjQIl3Ihs', t: 'How AI is Draining Google’s Finances', c: 'TLDR Business', stats: '776,539 views, 25,455 watch hours' },
-  { id: 'e-bWY_FOBX0', t: 'Is Circular AI Financing Really as Bad as It Sounds?', c: 'TLDR News Global', stats: '233,000+ views' },
-  { id: 'oOo-d0rd4bs', t: 'Anthropic’s IPO Prospectus Explained', c: 'TLDR Business', stats: '202,855 views, 7,790 watch hours' },
-  { id: 'OoPPTpWYHzE', t: 'Can AI “Afford” a Slowdown?', c: 'TLDR Business', stats: '144,171 views, 5,832 watch hours' },
-  { id: 'oO_oIL4g4aI', t: 'BlackBerry is back… and they’re not selling phones', c: 'TLDR Business', stats: '541,180 views, 18,552 watch hours' },
-  { id: 'YLXUIR7b8LA', t: 'How the BBC Turned the Tables on Trump in Court', c: 'TLDR News', stats: '539,000+ views' },
-  { id: 'oILCbxejiTQ', t: 'From Challenger to Winner: The Rise of Revolut', c: 'TLDR Business', stats: '439,447 views, 10,725 watch hours' },
-  { id: 'pJwJL-W4qnE', t: 'Why Netflix has Halved in Value', c: 'TLDR Business', stats: '413,741 views, 13,328 watch hours' },
-  { id: 'CHFOJmkoFY8', t: 'Nike is in Trouble — What Went Wrong?', c: 'TLDR Business', stats: '336,187 views, 10,231 watch hours' },
-  { id: 'ePcBM_TM_v8', t: 'How Did Jane Street Get So Obscenely Rich?', c: 'TLDR Business', stats: '243,026 views, 6,277 watch hours' },
-  { id: 'U0C7AknfcOs', t: 'The Insane Economics of GTA VI', c: 'TLDR Business', stats: '282,429 views, 12,147 watch hours' },
-  { id: 'RKMNcuLWxhA', t: 'Why This Verdict Could Cost Man City More Than You Think', c: 'TLDR Business', stats: '236,559 views, 8,757 watch hours' },
-  { id: 'onU85Iim1yM', t: 'Why SpaceX Has Given up on Space', c: 'TLDR Business', stats: '233,781 views, 9,234 watch hours' },
-  { id: 'yu1x9Ax7BpU', t: 'Will Politics Pop the AI Bubble?', c: 'TLDR Business', stats: '225,722 views, 9,342 watch hours' },
-  { id: 'fUg3SzCkiLU', t: 'Can Europe Break the Starlink Monopoly?', c: 'TLDR Business', stats: '204,933 views, 7,602 watch hours' },
-  { id: 'JDHdj8tjTiM', t: 'Why OpenAI is in Serious Trouble', c: 'TLDR Business', stats: '201,958 views, 7,637 watch hours' },
-  { id: 'kpOcxjnojTg', t: 'How Skydance Devoured American Media', c: 'TLDR Business', stats: '194,341 views, 6,123 watch hours' },
-  { id: 'oKgc2VFUleg', t: 'Why the Nvidia Affair is Bigger than You Think', c: 'TLDR Business', stats: '229,547 views, 9,214 watch hours' },
-  { id: 'eZcjkGOJ1Vw', t: 'Is Anthropic Really worth $2 Trillion?', c: 'TLDR Business', stats: '176,112 views, 6,050 watch hours' },
-  { id: 'H8HOfYm88Io', t: 'How BuzzBallz Took Over the Drinks Business', c: 'TLDR Business', stats: '163,873 views, 5,354 watch hours' },
-  { id: 'CZ6kI9g0z4k', t: 'Has Apple Stagnated?', c: 'TLDR Business', stats: '150,150 views, 4,722 watch hours' },
-  { id: 'wcGDSsxvSI4', t: 'How Palantir Captured the UK', c: 'TLDR Business', stats: '135,316 views, 4,754 watch hours' },
-  { id: 'sxNcSYojfqE', t: 'Who’s Winning the Robotaxi Wars?', c: 'TLDR Business', stats: '117,393 views, 4,732 watch hours' }
+  { id: 'n4HjQIl3Ihs', t: 'How AI is Draining Google’s Finances', c: 'TLDR Business', stats: [776539, 25454.5] },
+  { id: 'e-bWY_FOBX0', t: 'Is Circular AI Financing Really as Bad as It Sounds?', c: 'TLDR News Global', stats: [233600, 16500] },
+  { id: 'oOo-d0rd4bs', t: 'Anthropic’s IPO Prospectus Explained', c: 'TLDR Business', stats: [202855, 7790.1] },
+  { id: 'OoPPTpWYHzE', t: 'Can AI “Afford” a Slowdown?', c: 'TLDR Business', stats: [144171, 5831.7] },
+  { id: 'oO_oIL4g4aI', t: 'BlackBerry is back… and they’re not selling phones', c: 'TLDR Business', stats: [541180, 18551.9] },
+  { id: 'YLXUIR7b8LA', t: 'How the BBC Turned the Tables on Trump in Court', c: 'TLDR News', stats: [539400, 41000] },
+  { id: 'oILCbxejiTQ', t: 'From Challenger to Winner: The Rise of Revolut', c: 'TLDR Business', stats: [439447, 10725.0] },
+  { id: 'pJwJL-W4qnE', t: 'Why Netflix has Halved in Value', c: 'TLDR Business', stats: [413741, 13328.4] },
+  { id: 'CHFOJmkoFY8', t: 'Nike is in Trouble — What Went Wrong?', c: 'TLDR Business', stats: [336187, 10230.7] },
+  { id: 'ePcBM_TM_v8', t: 'How Did Jane Street Get So Obscenely Rich?', c: 'TLDR Business', stats: [243026, 6277.2] },
+  { id: 'U0C7AknfcOs', t: 'The Insane Economics of GTA VI', c: 'TLDR Business', stats: [282429, 12146.7] },
+  { id: 'RKMNcuLWxhA', t: 'Why This Verdict Could Cost Man City More Than You Think', c: 'TLDR Business', stats: [236559, 8756.9] },
+  { id: 'onU85Iim1yM', t: 'Why SpaceX Has Given up on Space', c: 'TLDR Business', stats: [233781, 9234.2] },
+  { id: 'yu1x9Ax7BpU', t: 'Will Politics Pop the AI Bubble?', c: 'TLDR Business', stats: [225722, 9341.5] },
+  { id: 'fUg3SzCkiLU', t: 'Can Europe Break the Starlink Monopoly?', c: 'TLDR Business', stats: [204933, 7601.9] },
+  { id: 'JDHdj8tjTiM', t: 'Why OpenAI is in Serious Trouble', c: 'TLDR Business', stats: [201958, 7636.8] },
+  { id: 'kpOcxjnojTg', t: 'How Skydance Devoured American Media', c: 'TLDR Business', stats: [194341, 6122.7] },
+  { id: 'oKgc2VFUleg', t: 'Why the Nvidia Affair is Bigger than You Think', c: 'TLDR Business', stats: [229547, 9214.0] },
+  { id: 'eZcjkGOJ1Vw', t: 'Is Anthropic Really worth $2 Trillion?', c: 'TLDR Business', stats: [176112, 6050.0] },
+  { id: 'H8HOfYm88Io', t: 'How BuzzBallz Took Over the Drinks Business', c: 'TLDR Business', stats: [163873, 5353.7] },
+  { id: 'CZ6kI9g0z4k', t: 'Has Apple Stagnated?', c: 'TLDR Business', stats: [150150, 4722.1] },
+  { id: 'wcGDSsxvSI4', t: 'How Palantir Captured the UK', c: 'TLDR Business', stats: [135316, 4754.1] },
+  { id: 'sxNcSYojfqE', t: 'Who’s Winning the Robotaxi Wars?', c: 'TLDR Business', stats: [117393, 4732.3] }
 ];
 
 // Podcasts on YouTube (titles to be finessed).
@@ -342,6 +356,13 @@ function guardianImage(i) {
     '&enable=upscale&s=' + i[3];
 }
 
+// 776539 -> "776.5K", 6330000 -> "6.33M"
+function short(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
+  return String(Math.round(n));
+}
+
 function el(tag, cls, text) {
   var n = document.createElement(tag);
   if (cls) n.className = cls;
@@ -387,7 +408,7 @@ function card(item, kindLabel) {
   }
   a.appendChild(thumb);
   var text = el('div', 'title', item.t);
-  if (item.stats) text.appendChild(el('span', 'tag', '[' + item.stats + ']'));
+  if (item.stats) text.appendChild(el('span', 'tag', '[' + short(item.stats[0]) + ' views, ' + short(item.stats[1]) + ' watch hours]'));
   a.appendChild(text);
   return a;
 }
@@ -618,6 +639,16 @@ function route() {
     var cat = CATS[key], items = cat.items();
     var grid = document.getElementById('cat-grid'), prose = document.getElementById('cat-prose');
     document.getElementById('cat-title').textContent = cat.title;
+    var tracker = document.getElementById('tracker');
+    tracker.hidden = key !== 'tldr-explainers';
+    if (!tracker.hidden) {
+      var views = 0, hours = 0;
+      VIDEOS.forEach(function (v) { if (v.stats) { views += v.stats[0]; hours += v.stats[1]; } });
+      document.getElementById('t-views').textContent = short(views);
+      document.getElementById('t-hours').textContent = short(hours);
+      document.getElementById('t-count').textContent = String(VIDEOS.length);
+      document.getElementById('t-note').textContent = 'YouTube Studio figures, last updated ' + STATS_DATE + '.';
+    }
     grid.innerHTML = ''; prose.innerHTML = '';
     items.forEach(function (item) { grid.appendChild(card(item)); });
     prose.hidden = items.length > 0;
