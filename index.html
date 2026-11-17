@@ -61,10 +61,12 @@ a.bubble:hover, a.bubble:focus-visible { background: var(--ink-deep); border-col
 #rows { display: flex; flex-direction: column; gap: 32px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px 24px; }
 .page-title { font-size: 34px; margin-bottom: 28px; }
-.tracker { display: flex; flex-wrap: wrap; gap: 16px 56px; align-items: flex-end; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 20px 0 16px; margin: -8px 0 36px; }
+.cat-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px; margin-bottom: 28px; }
+.cat-head .page-title { margin-bottom: 0; }
+.tracker { display: flex; flex-wrap: wrap; gap: 6px 36px; align-items: flex-end; justify-content: flex-end; }
 .tracker div { display: flex; flex-direction: column; gap: 4px; }
-.tracker .big { font-size: 52px; line-height: 1; }
-.tracker-note { flex-basis: 100%; font-size: 14px; font-style: italic; }
+.tracker .big { font-size: 34px; line-height: 1; }
+.tracker-note { flex-basis: 100%; font-size: 13px; font-style: italic; text-align: right; }
 .prose { max-width: 620px; display: flex; flex-direction: column; gap: 16px; font-size: 20px; line-height: 1.35; }
 .prose h3 { font-size: 26px; margin-top: 12px; }
 #view-read .page-title { margin: 8px 0 8px; max-width: 760px; font-size: 40px; line-height: 1.05; }
@@ -105,8 +107,9 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
   .trio { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .trio .blank { display: none; }
   .kind { display: block; }
-  .tracker { gap: 16px 32px; }
-  .tracker .big { font-size: 40px; }
+  .tracker { justify-content: flex-start; gap: 6px 28px; }
+  .tracker .big { font-size: 30px; }
+  .tracker-note { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bubble { animation: none; transition: none; }
@@ -156,12 +159,14 @@ a.card:hover .title { text-decoration: underline; text-underline-offset: 3px; }
 
   <!-- One category -->
   <section id="view-cat" hidden>
-    <h2 class="page-title" id="cat-title"></h2>
-    <div class="tracker" id="tracker" hidden>
-      <div><span class="big" id="t-views"></span><span class="caps">Total views</span></div>
-      <div><span class="big" id="t-hours"></span><span class="caps">Watch hours</span></div>
-      <div><span class="big" id="t-count"></span><span class="caps">Videos</span></div>
-      <p class="tracker-note" id="t-note"></p>
+    <div class="cat-head">
+      <h2 class="page-title" id="cat-title"></h2>
+      <div class="tracker" id="tracker" hidden>
+        <div><span class="big" id="t-views"></span><span class="caps">Total views</span></div>
+        <div><span class="big" id="t-hours"></span><span class="caps">Watch hours</span></div>
+        <div><span class="big" id="t-count"></span><span class="caps">Videos</span></div>
+        <p class="tracker-note" id="t-note"></p>
+      </div>
     </div>
     <div class="grid" id="cat-grid"></div>
     <div class="prose" id="cat-prose" hidden></div>
